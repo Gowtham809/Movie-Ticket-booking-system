@@ -1,0 +1,45 @@
+<!-- templates/home.html -->
+{% extends 'main.html' %}  <!-- Tell him to inherit from main -->
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <style>
+        /* Basic card styling */
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            display: inline-block;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Movie title styling */
+        .movie-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loop to generate movie cards -->
+    {% for movie in movie_tickets %}
+    <div class="card">
+        <div class="movie-title">{{ movie.movie_name }}</div>
+        <!-- You can add more details here if needed -->
+    </div>
+    {% endfor %}
+</body>
+</html>
+
+
+{% endblock %}
